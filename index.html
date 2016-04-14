@@ -17,7 +17,7 @@
 	  shape-rendering: crispEdges;
 	}
 
-	.x path {
+	.x path, .x line {
 		fill: none;
 		stroke: none;
 	}
@@ -147,7 +147,10 @@
 			.attr("transform", "translate(-30, "+(margin.bottom - margin.top)+")")
 			.call(yAxis);
 		// rotate the text on the axis
-		d3.selectAll(".x text").attr("transform", "rotate(290),translate(-105, -10)")
+		d3.selectAll(".x text")
+			.attr("transform", "rotate(290),translate(5, -10)")
+			.style("text-anchor", "end")
+
 
 
 		// prepare to draw the circles on the scatterplot, they will have a class called "dot"
